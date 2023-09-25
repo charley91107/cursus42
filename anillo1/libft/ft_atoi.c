@@ -20,16 +20,19 @@ int	ft_atoi(const char *str)
 	res = 0;
 	sign = 1;
 	i = 0;
+	//eliminacion de espacios en blanco y caracteres de ccontrol
 	while ((*str >= '\t' && *str <= '\r') || (*str == ' '))
 	{
 		str++;
 	}
+	//determinacion del signo del numero
 	if (*str == '-' || *str == '+')
 	{
 		if (*str == '-')
 			sign = -1;
 		str++;
 	}
+	//conversion dee caracteres numericoss a entero
 	while (*str >= '0' && *str <= '9')
 	{
 		res = (res * 10) + (*str - '0');
