@@ -20,6 +20,8 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	p1 = (const unsigned char *)s1;
 	p2 = (const unsigned char *)s2;
 	i = 0;
+	// mientras la 1 sea menor a la cantidad de tamaño a comparar compara el puntero 1 con el 2 hasta que sean diferentes. 
+	// en ese momento realiza la resta para ver cual es mayor.
 	while (i < n)
 	{
 		if (p1[i] != p2[i])
