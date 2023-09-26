@@ -13,6 +13,20 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char *substring;
+	char	*substring;
+	size_t	lens1;
+	size_t	lens2;
+	size_t	totallen;
 
-	substring = (char *)malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
+	if (s1 == NULL || s2 == NULL)
+		return (NULL);
+	lens1 = ft_strlen(s1);
+	lens2 = ft_strlen(s2);
+	totallen = lens1 + lens2;
+	substring = (char *)malloc((totallen + 1) * sizeof(char));
+	if (substring == NULL)
+		return (NULL);
+	ft_strlcpy(substring, s1, lens1 + 1);
+	ft_strlcpy(substring + lens1, s2, lens2 + 1);
+	return (substring);
+}
