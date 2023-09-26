@@ -14,9 +14,11 @@
 void	*ft_memset(void *str2, int f, size_t n)
 {
 	unsigned char	*aux;
-	size_t			i;
+	size_t		i;
 
+	//realizar puntero auxiliaar
 	aux = str2;
+	//mientras i sea menor que n se asigana el valor f en la posicion i del puntero aux
 	i = 0;
 	while (i < n)
 	{
