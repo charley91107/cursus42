@@ -18,6 +18,10 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 	i = 0;
 	if (s == NULL || f == NULL)
 		return ;
+	/*
+ 	dentro del bucle se llama a la funcion f pasando dos argumentos: el valor de i(indice del caracter de la cadena)
+  	y un puntero al caracter de la posicion i de la cadena s.
+  	*/
 	while (s[i])
 	{
 		(*f)(i, &(s[i]));
