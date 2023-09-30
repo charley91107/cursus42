@@ -6,12 +6,12 @@
 #    By: cmunoz-c <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/13 20:05:31 by cmunoz-c          #+#    #+#              #
-#    Updated: 2023/09/22 12:26:33 by cmunoz-c         ###   ########.fr        #
+#    Updated: 2023/09/29 12:57:03 by cmunoz-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # ARCHIVOS FUENTE
-SRC =  ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c ft_memset.c ft_strlen.c ft_memcpy.c ft_memmove.c ft_strlcpy.c ft_strlcat.c ft_toupper.c ft_tolower.c ft_strchr.c ft_strrchr.c ft_strncmp.c ft_memchr.c ft_memcmp.c ft_strnstr.c ft_atoi.c ft_calloc.c ft_strdup.c ft_substr.c
+SRC =  ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c ft_memset.c ft_strlen.c ft_memcpy.c ft_memmove.c ft_strlcpy.c ft_strlcat.c ft_toupper.c ft_tolower.c ft_strchr.c ft_strrchr.c ft_strncmp.c ft_memchr.c ft_memcmp.c ft_strnstr.c ft_atoi.c ft_calloc.c ft_strdup.c ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c
 
 #GENERAR EL ARCHIVO OBJETO DE CADA ARCHIVO FUENTE
 OBJS = $(SRC:.c=.o)

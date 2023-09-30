@@ -22,10 +22,6 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	p2 = needle;
 	i = 0;
 	j = 0;
-	/*
-	erifica si la cadena needle es una cadena vacía (termina inmediatamente con '\0'). 
-	Si es así, devuelve un puntero al inicio de la cadena haystack.
-	*/
 	if (*p2 == '\0')
 		return ((char *)p1);
 	while (p1[i] && i < len)

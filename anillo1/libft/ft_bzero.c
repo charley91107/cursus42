@@ -14,10 +14,8 @@
 void	ft_bzero(void *g, size_t n2)
 {
 	char	*aux;
-	
-	//conversion del puntero g a un puntero de caracteres
+
 	aux = (char *) g;
-	//mientras n2 sea  mayor que 0  se establecen con el vaor 0 tantos bytes como n2 marque.
 	while (n2 > 0)
 	{
 		*aux++ = 0;

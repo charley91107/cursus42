@@ -1,0 +1,74 @@
+FT_ATOI
+(ASCII to Integer) en el lenguaje de programación C. Esta función se utiliza para convertir una cadena de caracteres que representa un número en su equivalente en formato entero. 
+
+FT_BZERO
+Esta función se utiliza para establecer a cero (es decir, asignar un valor de 0) un bloque de memoria de un tamaño específico.
+
+FT_CALLOC
+se utiliza cuando necesitas asignar memoria dinámica y quieres asegurarte de que todos los bytes de esa memoria se inicialicen a cero. Esto es útil en una variedad de situaciones en las que se necesita una inicialización segura y predecible de la memoria, como trabajar con arreglos, matrices o datos sensibles.
+
+FT_ISALLNUM
+se utiliza para determinar si un carácter (representado por la variable c) es un carácter alfanumérico. 
+
+FT_ISALPHA
+verifica si un carácter dado es una letra alfabética (mayúscula o minúscula) y devuelve 1 si lo es, y 0 si no lo es. Es una función que puede ser útil al procesar cadenas de texto o caracteres en un programa en C para realizar comprobaciones relacionadas con letras del alfabeto.
+
+FT_ISASCII
+verifica si un valor entero a representa un carácter ASCII válido, devolviendo 1 si lo es y 0 si no lo es. Es una forma de comprobar si un número entero se encuentra en el rango de códigos de caracteres ASCII estándar.
+
+FT_ISDIGIT
+verifica si un entero d es un dígito decimal (un número del 0 al 9) y devuelve 1 si es cierto y 0 si no lo es. Esta función es útil para validar caracteres en una cadena y determinar si son números.
+
+FT_ISPRINT
+se utiliza para determinar si un carácter dado (representado por su valor numérico b) es imprimible o no, según la tabla ASCII. Si el carácter es imprimible, la función devuelve 1, de lo contrario, devuelve 0.
+
+FT_MEMCHR
+se utiliza para buscar la primera aparición de un byte específico en una región de memoria y devuelve un puntero a esa ubicación si lo encuentra, o NULL si no lo encuentra.
+
+FT_MEMCMP
+compara los primeros n bytes de dos bloques de memoria y devuelve un entero que indica su relación de orden. Si los bloques de memoria son iguales, devuelve 0. Si difieren, devuelve la diferencia entre los valores de los primeros bytes diferentes.
+
+FT_MEMMOVE
+es una función que copia una cantidad específica de bytes desde una fuente a un destino, manejando adecuadamente las situaciones en las que las áreas de memoria de origen y destino se superponen. Esta implementación se encarga de la copia de memoria de manera eficiente y segura.
+
+FT_MEMSET
+se utiliza para llenar un bloque de memoria (apuntado por str2) con un valor específico (f) durante un número determinado de bytes (n). La función utiliza un bucle para iterar sobre la memoria, asignando el valor f a cada byte, y luego retorna el puntero original para que el usuario sepa dónde se ha realizado el llenado.
+
+FT_SPLIT
+La función que has proporcionado, llamada ft_split se utiliza para dividir una cadena de caracteres en palabras separadas por un carácter delimitador c. 
+
+FT_STRCHR
+busca la primera aparición de un carácter dado en una cadena de caracteres y devuelve un puntero a esa posición. Si el carácter no se encuentra, devuelve NULL. La implementación utiliza un bucle while para recorrer la cadena s y realizar las comprobaciones necesarias para encontrar el carácter.
+
+FT_STRDUP
+toma una cadena de caracteres como entrada, asigna memoria dinámica para una copia de esa cadena, verifica si la asignación de memoria fue exitosa, copia el contenido de la cadena original en la copia y devuelve un puntero a la nueva copia.
+
+FT_STRJOIN
+se utiliza para concatenar dos cadenas de caracteres (strings) y devolver una nueva cadena que contiene la concatenación de ambas.
+
+FT_STRCAT
+copia los caracteres de la cadena src en la cadena dest hasta un máximo de n - 1 caracteres, asegurando que no se desborde el búfer de destino. Luego, devuelve la longitud total de la cadena concatenada
+
+FT_STRLCPY
+copia una cadena de caracteres desde la cadena fuente src a la cadena de destino dest, asegurándose de que no se copien más de n caracteres (incluido el carácter nulo) y devolviendo la longitud original de src. 
+
+FT_STRLEN
+calcula la longitud de una cadena de caracteres recorriendo cada carácter de la cadena hasta que encuentra el carácter nulo que marca el final. Luego, devuelve el número de caracteres en la cadena como un valor de tipo size_t.
+
+FT_STRNCMP
+compara las cadenas de caracteres s1 y s2 hasta un máximo de n caracteres o hasta que se encuentre un carácter nulo ('\0') en una de las cadenas. Devuelve un valor negativo si s1 es menor que s2, un valor positivo si s1 es mayor que s2, y 0 si son iguales hasta el punto especificado.
+
+FT_STRNSTR  
+busca una subcadena en una cadena principal con un límite de longitud y devuelve un puntero a la primera aparición de la subcadena o NULL si no se encuentra.
+
+FT_STRRCHR
+esta función busca el último carácter c en la cadena s y devuelve un puntero a esa posición en la cadena. Si no encuentra el carácter, devuelve NULL
+
+FT_SUBSTR
+se utiliza para extraer una subcadena de una cadena dada. 
+
+FT_TOLOWER
+convierte las letras a minusculas
+
+FT_TOUPPER
+convierte las letras a minusculas
