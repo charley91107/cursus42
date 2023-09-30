@@ -14,11 +14,20 @@
 char	*ft_strmapi(char const *s, char (*f) (unsigned int, char))
 {
 	unsigned int	i;
-	char			*str;
+	char			*str
 
+	/*
+	]se utiliza la funcion ft_srtdup para duplicar la cadena de entrada y se le asigna la moemoria necesaria 
+	para la nuvea cadena str
+	*/
 	str = ft_strdup(s);
 	if (str == NULL || f == NULL)
 		return (NULL);
+	/*
+ 	bucle de mapeo, se entra en un bucle while que recoore cada caracter de la cadena de entrada s hasta llegar al caracter nulo.
+  	en cada iteraccion del bucle se aplica la funcion de mapeo f al caracter de la posicion i de la cadena str. el resultado de esta 
+   	operacion se le asigna de nuevo a str[i].
+ 	*/
 	i = 0;
 	while (s[i])
 	{
