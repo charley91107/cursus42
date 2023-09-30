@@ -72,3 +72,6 @@ convierte las letras a minusculas
 
 FT_TOUPPER
 convierte las letras a minusculas
+
+FT_STRMAPI
+duplica la cadena de entrada, aplica una función de mapeo a cada carácter de la cadena duplicada y devuelve una nueva cadena con los resultados de estas operaciones. 
