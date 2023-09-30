@@ -75,3 +75,9 @@ convierte las letras a minusculas
 
 FT_STRMAPI
 duplica la cadena de entrada, aplica una función de mapeo a cada carácter de la cadena duplicada y devuelve una nueva cadena con los resultados de estas operaciones. 
+
+FT_STRITERI
+la función ft_striteri itera a través de cada carácter en la cadena s y llama a la función f con el índice del carácter y el propio carácter como argumentos. Esto permite aplicar alguna acción o transformación a cada carácter de la cadena en función de su posición
+
+FT_PUTCHAR_FD
+toma un carácter y un descriptor de archivo como entrada y escribe ese carácter en el archivo asociado con el descriptor de archivo proporcionado.
