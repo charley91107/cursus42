@@ -13,6 +13,10 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
+	/*
+ 	Dentro del bucle, la función write se utiliza para escribir un byte (1 byte) del contenido apuntado 
+  	por s en el descriptor de archivo fd.
+ 	*/
 	while (*s)
 	{
 		write(fd, s, 1);
