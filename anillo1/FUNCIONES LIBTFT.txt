@@ -81,3 +81,6 @@ la función ft_striteri itera a través de cada carácter en la cadena s y llama
 
 FT_PUTCHAR_FD
 toma un carácter y un descriptor de archivo como entrada y escribe ese carácter en el archivo asociado con el descriptor de archivo proporcionado.
+
+FT_PUTSTR_FD
+esta función toma una cadena de caracteres y un descriptor de archivo como entrada y escribe cada carácter de la cadena en el archivo uno por uno hasta que llegue al final de la cadena (carácter nulo).
