@@ -84,3 +84,6 @@ toma un carácter y un descriptor de archivo como entrada y escribe ese carácte
 
 FT_PUTSTR_FD
 esta función toma una cadena de caracteres y un descriptor de archivo como entrada y escribe cada carácter de la cadena en el archivo uno por uno hasta que llegue al final de la cadena (carácter nulo).
+
+FT_PUTENDL_FD
+esta función toma una cadena de caracteres y un descriptor de archivo como entrada. Itera a través de la cadena de caracteres y escribe cada carácter en el descriptor de archivo proporcionado. Después de escribir toda la cadena, agrega un carácter de nueva línea para que el próximo texto escrito en el archivo
