@@ -13,10 +13,17 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
+	/*
+ 	Utiliza la función write para escribir un solo carácter de la cadena (*s) en el descriptor de archivo (fd). 
+  	El tercer argumento 1 indica que se está escribiendo un solo carácter.
+  	*/
 	while (*s)
 	{
 		write(fd, s, 1);
 		s++;
 	}
+	/*
+ 	Escribe el carácter de nueva línea ('\n') en el descriptor de archivo fd.
+  	*/
 	write(fd, "\n", 1);
 }
