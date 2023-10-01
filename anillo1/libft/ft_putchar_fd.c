@@ -13,5 +13,8 @@
 
 void	ft_putchar_fd(char c, int fd)
 {
+	/*
+ 	se pasa fd como el file descriptor, &c como un puntero al carácter c, y 1 como el número de bytes que se van a escribir 
+  	*/
 	write(fd, &c, 1);
 }	
