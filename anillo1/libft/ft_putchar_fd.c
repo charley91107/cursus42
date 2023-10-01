@@ -13,9 +13,5 @@
 
 void	ft_putchar_fd(char c, int fd)
 {
-	/*
- 	Aquí, fd es el descriptor de archivo proporcionado como argumento a la función, 
-  	&c es la dirección de memoria del carácter c y 1 es el número de bytes que se van a escribir.
-  	*/
 	write(fd, &c, 1);
 }	
