@@ -22,6 +22,10 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	i = 0;
 	while (i < n && (dest != NULL || src != NULL))
 	{
+		/*
+  		En cada iteración del bucle, un byte de datos se copia desde la ubicación de memoria apuntada por src_c 
+    		a la ubicación de memoria apuntada por dest_c.
+    		*/
 		dest_c[i] = src_c[i];
 		i++;
 	}
