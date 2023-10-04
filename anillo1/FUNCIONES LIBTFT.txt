@@ -28,6 +28,9 @@ se utiliza para buscar la primera aparición de un byte específico en una regi�
 FT_MEMCMP
 compara los primeros n bytes de dos bloques de memoria y devuelve un entero que indica su relación de orden. Si los bloques de memoria son iguales, devuelve 0. Si difieren, devuelve la diferencia entre los valores de los primeros bytes diferentes.
 
+FT_MEMCPY
+proporciona una forma básica de copiar bloques de memoria de una ubicación a otra en un programa en C. Recorre byte por byte, copiando datos desde la ubicación de memoria de origen a la ubicación de memoria de destino hasta que se hayan copiado Ín bytes o hasta que se encuentre un carácter NULL en cualquiera de las ubicaciones de memoria. Finalmente, devuelve un puntero a la ubicación de memoria de destino.
+
 FT_MEMMOVE
 es una función que copia una cantidad específica de bytes desde una fuente a un destino, manejando adecuadamente las situaciones en las que las áreas de memoria de origen y destino se superponen. Esta implementación se encarga de la copia de memoria de manera eficiente y segura.
 
