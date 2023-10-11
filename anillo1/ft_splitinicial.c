@@ -55,28 +55,30 @@ static void	ft_free(char **strs, int j)
 
 char	**ft_split(char const *s, char c)
 {
-	int		i[2];
+	int		i;
 	int		word;
 	char	**strs;
+	int		size;
+	int		j;
 
-	i[0] = 0;
-	i[1] = -1;
+	i = 0;
+	j = -1;
 	word = ft_count_word(s, c);
-	strs = (char **)malloc((word + 1) * sizeof(char *));
+	*strs = (char **)malloc((word + 1) * sizeof(char *));
 	if (!(strs))
 		return (NULL);
-	while (++i[1] < word)
+	while (++j < word)
 	{
-		while (s[i[0]] == c)
-			i[0]++;
-		strs[i[1]] = ft_substr(s, i[0], ft_size_word(s, c, i[0]));
-		if (!(strs[i[1]]))
+		while (s[i] == c)
+			i++;
+		size = ft_size_word(s, c, i);
+		if (!(strs[j] = ft_substr(s, i, size)))
 		{
-			ft_free(strs, i[1]);
+			ft_free(strs, j);
 			return (NULL);
 		}
-		i[0] += ft_size_word(s, c, i[0]);
+		i += size;
 	}
-	strs[i[1]] = 0;
+	strs[j] = 0;
 	return (strs);
 }
