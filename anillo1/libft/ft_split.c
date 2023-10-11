@@ -9,112 +9,76 @@
 /*   Updated: 2023/10/08 14:56:21 by cmunoz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
 
-size_t	count_words(char const *s, char c)
+static int	ft_count_word(char const *s, char c)
 {
-	size_t	word;
-	size_t	wordnumber;
+	int	i;
+	int	word;
 
+	i = 0;
 	word = 0;
-	wordnumber = 0;
-	while (*s)
+	while (s && s[i])
 	{
-		if (*s == c)
-			word = 0;
-		else
+		if (s[i] != c)
 		{
-			if (!word)
-			{
-				wordnumber++;
-				word = 1;
-			}
+			word++;
+			while (s[i] != c && s[i])
+				i++;
 		}
-		s++;
+		else
+			i++;
 	}
-	return (wordnumber);
+	return (word);
 }
 
-void	ft_splitaux(char const *s, char c, char **mem)
+static int	ft_size_word(char const *s, char c, int i)
 {
-	size_t	i[2];
+	int	size;
 
-	i[0] = 0;
-	while (*s)
+	size = 0;
+	while (s[i] != c && s[i])
 	{
-		if (*s == c)
-			s++;
-		else
-		{
-			i[1] = 0;
-			while (s[i[1]] && s[i[1]] != c)
-				i[1]++;
-			mem[i[0]] = (char *)malloc((i[1] + 1) * sizeof(char));
-			if (mem[i[0]] == NULL)
-			{
-				while (i[0] > 0)
-					free(mem[--i[0]]);
-				free(*mem);
-			}
-			ft_strlcpy(mem[i[0]], s, i[1] + 1);
-			s += i[1];
-			i[0]++;
-		}
+		size++;
+		i++;
 	}
-	mem[i[0]] = NULL;
+	return (size);
+}
+
+static void	ft_free(char **strs, int j)
+{
+	while (j-- > 0)
+		free(strs[j]);
+	free(strs);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	**res;
-	size_t	wordnumber;
-  int i = 0;
+	int		i;
+	int		word;
+	char	**strs;
+	int		size;
+	int		j;
 
-	wordnumber = count_words(s, c);
-	res = (char **)malloc((wordnumber + 1) * sizeof(char *));
-  printf("puntero: %p\n", res);
-	if (s == NULL || res == NULL)
+	i = 0;
+	j = -1;
+	word = ft_count_word(s, c);
+	*strs = (char **)malloc((word + 1) * sizeof(char *));
+	if (!(strs))
 		return (NULL);
-	ft_splitaux(s, c, res);
-	return (res);
+	while (++j < word)
+	{
+		while (s[i] == c)
+			i++;
+		size = ft_size_word(s, c, i);
+		if (!(strs[j] = ft_substr(s, i, size)))
+		{
+			ft_free(strs, j);
+			return (NULL);
+		}
+		i += size;
+	}
+	strs[j] = 0;
+	return (strs);
 }
-
-/* void leaks()
-{
-  system("leaks -q a.out");
-}
-    atexit(leaks); */
-
-/* int main() {
-    char input[] = "Hola mundo este,es,un,ejemplo";
-    char delimiter = ',';
-
-    printf("%s\n", *ft_split("hello!", 32));
-  
-} */
-
-
-/*int main()
-{
-  // test the function
-  char s[] = "To be, or not to be, that is the question.";
-  int count_strings = 0;
-  char **split_strings = split(s, " ,.", &count_strings);
-  
-  // print out the substrings, which should be each word of the sentence above
-  for (int i = 0; i < count_strings; i++)
-    printf("%s\n", split_strings[i]);
-  
-  // free the dynamically allocated space for each string
-  for (int i = 0; i < count_strings; i++)
-    free(split_strings[i]);
-  
-  // free the dynamically allocated space for the array of pointers to strings
-  free(split_strings);
-  
-  return 0;
-} 
-*/
