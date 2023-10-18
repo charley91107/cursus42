@@ -9,13 +9,19 @@
 /*   Updated: 2023/09/14 13:03:31 by cmunoz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+/*
+In this code, the function `ft_isascii` checks if the given integer `a` is within the range of ASCII 
+values (0-127). If it is, the function returns 1, indicating that `a` is an ASCII character. Otherwise, 
+it returns 0.
+*/
 
 #include "libft.h"
 
-int	ft_isascii(int a)
+int ft_isascii(int a)
 {
-	if (a >= 0 && a <= 127)
-		return (1);
-	else
-		return (0);
+    // Check if a is within ASCII range
+    if (a >= 0 && a <= 127)
+        return (1);
+    else
+        return (0);
 }
