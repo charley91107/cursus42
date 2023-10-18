@@ -9,6 +9,14 @@
 /*   Updated: 2023/09/27 17:28:08 by cmunoz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+/*
+In this code, the `ft_len` function calculates the length of the integer `a` when converted to a string. 
+The `ft_tab0` function allocates memory for a string containing only the character '0' and a null terminator. 
+The `ft_itoa` function converts the integer `n` to a string and returns the string. 
+The `ft_itoa` function first checks if `n` is equal to 0. If it is, the function returns the string "0" by 
+calling the `ft_tab0` function
+*/
+
 #include "libft.h"
 
 // Function to find the length of a number
