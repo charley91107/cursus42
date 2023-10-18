@@ -11,54 +11,90 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-int	ft_count(long int i)
+// Function to find the length of a number
+size_t ft_len(long a)
 {
-	int	count;
+	size_t len; // Initialize variable to store length
 
-	count = 0;
-	if (i < 0)
+	len = 0; // Set initial length to 0
+	if (a < 0) // Check if number is negative
 	{
-		i *= -1;
-		count++;
+		a = -a; // Convert negative number to positive
+		len++; // Increment length by 1 for negative sign
 	}
-	while (i > 0)
+	while (a > 0) // Loop until number becomes 0
 	{
-		i = i / 10;
-		count++;
+		a = a / 10; // Divide number by 10 to remove last digit
+		len++; // Increment length by 1 for each digit removed
 	}
-	return (count);
+	return (len); // Return the length of the number
 }
+
+// Function to create a tab with '0'
+char	*ft_tab0(char *tab)
+{
+	// Allocate memory for the tab
+	tab = (char *)malloc(sizeof(char) * 2);
+	if (!(tab))
+		return (NULL);
+	// Assign '0' to the first character
+	tab[0] = '0';
+	// Assign null terminator to the second character
+	tab[1] = '\0';
+	// Return the tab
+	return (tab);
+}
+
+/*
+This code converts an integer to a string. It first checks if the integer is 0, and if so, 
+returns the string "0". If the integer is not 0, it calculates the length of the string and allocates memory for it.
+It then converts the integer to a string and returns the string. 
+*/
 
 char	*ft_itoa(int n)
 {
-	char	*str;
-	int		i;
+	long	a;
+	char	*tab;
+	size_t	len;
 
-	i = ft_count(n);
-	if (n == -2147483648)
-	{
-		str = ft_strdup("-2147483648");
-		return (str);
-	}
-	str = malloc(i * sizeof(char) + 1);
-	if (!(str))
+	// Convert int to long
+	a = n;
+
+	// Calculate length of the string
+	len = ft_len(a);
+
+	// Initialize tab to NULL
+	tab = 0;
+
+	// Check if n is 0, return "0" if true
+	if (a == 0)
+		return (ft_tab0(tab));
+
+	// Allocate memory for tab
+	tab = (char *)malloc(sizeof(char) * (len + 1));
+
+	// Check if allocation was successful
+	if (!(tab))
 		return (NULL);
-	str[i--] = 0;
-	if (n == 0)
+
+	// Set last character of tab to NULL
+	tab[len--] = '\0';
+
+	// Check if n is negative, add '-' to tab if true
+	if (a < 0)
 	{
-		free(str);
-		str = ft_calloc(2, sizeof(char));
-		str[0] = 48;
+		tab[0] = '-';
+		a = -a;
 	}
-	if (n < 0)
+
+	// Convert long to string
+	while (a > 0)
 	{
-		str[0] = '-';
-		n = n * -1;
+		tab[len] = a % 10 + '0';
+		a = a / 10;
+		len--;
 	}
-	while (n > 0)
-	{
-		str[i--] = n % 10 + '0';
-		n = n / 10;
-	}
-	return (str);
+
+	// Return the string
+	return (tab);
 }
