@@ -9,9 +9,15 @@
 /*   Updated: 2023/10/12 12:00:29 by cmunoz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+/*
+In this code, we create a new list node with the given content. We allocate memory for the node and set 
+its content and next pointer. If memory allocation fails, we return NULL.
+*/
+
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+// Create new list node
+t_list *ft_lstnew(void *content)
 {
 	t_list	*ptr;
 
