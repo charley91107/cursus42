@@ -16,6 +16,8 @@ array de cadenas (un array de punteros a caracteres) donde cada cadena represent
 una palabra en la cadena original.
 */
 
+#include "libft.h"
+
 static int	ft_count_word(char const *s, char c)
 {
 	int	i;
