@@ -6,7 +6,7 @@
 /*   By: cmunoz-c <cmunoz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 10:58:37 by cmunoz-c          #+#    #+#             */
-/*   Updated: 2023/11/02 13:41:57 by cmunoz-c         ###   ########.fr       */
+/*   Updated: 2023/11/08 15:30:24 by cmunoz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define GET_NEXT_LINE_H
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 32
+#  define BUFFER_SIZE 10000000
 # endif
 
 # include <fcntl.h>
@@ -28,7 +28,6 @@ char		*ft_read(int fd, char *storage);
 char		*get_next_line(int fd);
 char		*ft_get_line(char *storage);
 size_t		ft_strlen(char *e);
-size_t		ft_strlcpy(char *dest, char *src, size_t n);
 char		*ft_nextstr(char *storage);
 
 #endif
