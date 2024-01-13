@@ -1,33 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmunoz-c <cmunoz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/25 10:58:37 by cmunoz-c          #+#    #+#             */
-/*   Updated: 2023/11/10 12:46:39 by cmunoz-c         ###   ########.fr       */
+/*   Created: 2024/01/13 13:38:42 by cmunoz-c          #+#    #+#             */
+/*   Updated: 2024/01/13 16:34:35 by cmunoz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 32
-# endif
-
-# include <fcntl.h>
-# include <stdio.h>
-# include <stdlib.h>
 # include <unistd.h>
+# include <stdio.h>
+# include <stdint.h>
+# include <stdarg.h>
 
-char		*ft_strchr(char *s, int c);
-char		*ft_strjoin(char *stor, char *buffer);
-char		*ft_read(int fd, char *storage);
-char		*get_next_line(int fd);
-char		*ft_get_line(char *storage);
-size_t		ft_strlen(char *e);
-char		*ft_nextstr(char *storage);
-
+int	ft_putchar(char c);
+int ft_putstr(char *s);
 #endif

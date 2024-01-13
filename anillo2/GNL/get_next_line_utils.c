@@ -6,7 +6,7 @@
 /*   By: cmunoz-c <cmunoz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 10:59:14 by cmunoz-c          #+#    #+#             */
-/*   Updated: 2023/11/10 10:49:36 by cmunoz-c         ###   ########.fr       */
+/*   Updated: 2023/11/18 13:27:47 by cmunoz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char	*ft_strjoin(char *stor, char *buffer)
 
 	if (!stor)
 	{
-		stor = (char *)malloc(1 * sizeof(char));
+		stor = (char *)malloc(1 * sizeof(char) + 1);
 		stor[0] = '\0';
 	}
 	if (!stor || !buffer)
@@ -112,7 +112,10 @@ char	*ft_nextstr(char *storage)
 	}
 	new_line = (char *) malloc(sizeof(char) * (ft_strlen(storage) - i + 1));
 	if (!new_line)
+	{
+		free(storage);
 		return (NULL);
+	}
 	i++;
 	n = 0;
 	while (storage[i])

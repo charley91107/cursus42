@@ -6,7 +6,7 @@
 /*   By: cmunoz-c <cmunoz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 10:58:55 by cmunoz-c          #+#    #+#             */
-/*   Updated: 2023/11/10 10:55:52 by cmunoz-c         ###   ########.fr       */
+/*   Updated: 2023/11/23 11:54:49 by cmunoz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,32 +46,32 @@ char	*get_next_line(int fd)
 		return (0);
 	storage = ft_read(fd, storage);
 	if (!storage)
-		return (0);
+		return (NULL);
 	line = ft_get_line(storage);
 	storage = ft_nextstr(storage);
 	return (line);
 }
 
-#include <fcntl.h>
-#include <stdio.h>
-#include <stdlib.h>
+// #include <fcntl.h>
+// #include <stdio.h>
+// #include <stdlib.h>
 
-int main(void)
-{
-    int fd;
-    char *line;
+// int main(void)
+// {
+//     int fd;
+//     char *line;
 
-    fd = open("example.txt", O_RDONLY);
-    if (fd == -1)
-    {
-        perror("Error opening file");
-        return 1;
-    }
-    while ((line = get_next_line(fd)) != NULL)
-    {
-        printf("%s\n", line);
-        free(line);
-    }
-    close(fd);
-    return 0;
-}
+//     fd = open("example.txt", O_RDONLY);
+//     if (fd == -1)
+//     {
+//         perror("Error opening file");
+//         return 1;
+//     }
+//     while ((line = get_next_line(fd)) != NULL)
+//     {
+//         printf("%s\n", line);
+//         free(line);
+//     }
+//     close(fd);
+//     return 0;
+// }
