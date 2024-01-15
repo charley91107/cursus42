@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_unsigned.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmunoz-c <cmunoz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/13 16:28:20 by cmunoz-c          #+#    #+#             */
-/*   Updated: 2024/01/14 16:47:24 by cmunoz-c         ###   ########.fr       */
+/*   Created: 2024/01/14 16:07:17 by cmunoz-c          #+#    #+#             */
+/*   Updated: 2024/01/14 16:13:57 by cmunoz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putstr(char *s)
+int	ft_unsigned(unsigned int n)
 {
-	size_t	i;
+	int	len;
 
-	i = 0;
-	if (!s)
-		return (ft_putstr("(null)"));
-	i = 0;
-	while (s[i])
+	len = 0;
+	if (n < 0)
+		n = 4294967295 + n + 1;
+	if (n > 9)
 	{
-		ft_putchar(s[i]);
-		i++;
+		len += ft_unsigned(n / 10);
+		if (len == -1)
+			return (-1);
 	}
-	return (i);
+	len += ft_putchar((n % 10) + '0');
+	if (len == -1)
+		return (-1);
+	return (len);
 }

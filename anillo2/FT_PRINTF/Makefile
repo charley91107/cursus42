@@ -6,13 +6,13 @@
 #    By: cmunoz-c <cmunoz-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/13 13:22:14 by cmunoz-c          #+#    #+#              #
-#    Updated: 2024/01/13 16:18:00 by cmunoz-c         ###   ########.fr        #
+#    Updated: 2024/01/14 16:43:31 by cmunoz-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 # ARCHIVOS FUENTE
-SRC =  ft_putchar.c 
+SRC =  ft_putchar.c ft_printf.c ft_ptr.c  ft_putstr.c ft_hexa.c ft_putnbr.c ft_unsigned.c
 
 #GENERAR EL ARCHIVO OBJETO DE CADA ARCHIVO FUENTE
 OBJS = $(SRC:.c=.o)

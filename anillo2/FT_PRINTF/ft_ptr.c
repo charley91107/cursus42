@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_ptr.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmunoz-c <cmunoz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/13 16:28:20 by cmunoz-c          #+#    #+#             */
-/*   Updated: 2024/01/14 16:47:24 by cmunoz-c         ###   ########.fr       */
+/*   Created: 2024/01/14 13:50:16 by cmunoz-c          #+#    #+#             */
+/*   Updated: 2024/01/14 16:49:11 by cmunoz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putstr(char *s)
+int	ft_ptr(void *ptr)
 {
-	size_t	i;
+	int	len;
+	int	aux;
 
-	i = 0;
-	if (!s)
-		return (ft_putstr("(null)"));
-	i = 0;
-	while (s[i])
-	{
-		ft_putchar(s[i]);
-		i++;
-	}
-	return (i);
+	len = 0;
+	aux = 0;
+	if (ft_putstr("0x") == -1)
+		return (-1);
+	len += 2;
+	aux = ft_hexa((unsigned long)ptr, "0123456789abcdef");
+	if (aux == -1)
+		return (-1);
+	len += aux;
+	return (len);
 }
