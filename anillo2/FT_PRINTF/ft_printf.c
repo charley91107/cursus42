@@ -71,7 +71,7 @@ int	ft_printf(char const *format, ...)
 
 	printf("Pruebas con printf:\n");
 	printf("imprimie el caracter: %c\n", 'A');
-	printf(" imprime el string: %s\n", str);
+	printf("imprime el string: %s\n", str);
 	printf("imprime el puntero en hexagonal: %p\n", ptr);
 	printf("imprime numero en base 10: %d\n", i);
 	printf("imprime un entero en base 10: %i\n", i);
@@ -84,8 +84,7 @@ int	ft_printf(char const *format, ...)
 	printf("imprime numero en base 10 negativo: %d\n", n);
 	printf("\n");
 
-	printf("Pruebas con ft_printf:\n");
-	ft_printf("Pruebas con printf:\n");
+	ft_printf("Pruebas con ft_printf:\n");
 	ft_printf("imprimie el caracter: %c\n", 'A');
 	ft_printf(" imprime el string: %s\n", str);
 	ft_printf("imprime el puntero en hexagonal: %p\n", ptr);
@@ -98,7 +97,7 @@ int	ft_printf(char const *format, ...)
 	ft_printf("imprime el simbolo del porcentaje: %%\n");
 	ft_printf("imprime situacion especial de string null: %s\n", NULL);
 	ft_printf("imprime numero en base 10 negativo: %d\n", n);
-	printf("\n");
+	ft_printf("\n");
 
 	return (0);
 }*/
